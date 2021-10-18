@@ -37,7 +37,7 @@ export default function RegisterView() {
       <DialogContent>
         <form onSubmit={handleSubmit} autoComplete="off">
           <label>
-            Имя
+            Имя &nbsp;
             <TextField
               autoFocus
               margin="dense"
@@ -49,7 +49,7 @@ export default function RegisterView() {
           </label>
 
           <label>
-            Почта
+            Почта &nbsp;
             <TextField
               autoFocus
               margin="dense"
@@ -61,7 +61,7 @@ export default function RegisterView() {
           </label>
 
           <label>
-            Пароль
+            Пароль &nbsp;
             <TextField
               id="pass"
               autoFocus

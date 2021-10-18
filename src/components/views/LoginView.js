@@ -32,7 +32,7 @@ export default function LoginView() {
       <DialogContent>
         <form onSubmit={handleSubmit} autoComplete="off">
           <label>
-            Почта
+            Почта &nbsp;
             <TextField
               autoFocus
               margin="dense"
@@ -44,7 +44,7 @@ export default function LoginView() {
           </label>
 
           <label>
-            Пароль
+            Пароль &nbsp;
             <TextField
               autoFocus
               margin="dense"

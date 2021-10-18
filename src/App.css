@@ -8,7 +8,9 @@ body {
   background-repeat: no-repeat;
 }
 
-
+label {
+  margin-right: 10px;
+}
 
 .App-logo {
   height: 40vmin;

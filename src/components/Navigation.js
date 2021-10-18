@@ -9,6 +9,7 @@ const styles = {
     textDecoration: "none",
     fontWeight: 900,
     color: "#282c34",
+    marginRight: "200px",
   },
   activeLink: {
     color: "#61dafb",
@@ -22,7 +23,7 @@ const Navigation = () => {
       <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
         Главная
       </NavLink>
-
+      &nbsp;
       {isLoggedIn && (
         <NavLink
           to="/contacts"

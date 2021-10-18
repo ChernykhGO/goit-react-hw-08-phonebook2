@@ -6,7 +6,6 @@ axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-    // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   },
   unset() {
     axios.defaults.headers.common.Authorization = "";
@@ -20,12 +19,13 @@ const token = {
  */
 export const register = createAsyncThunk(
   "/auth/register",
-  async (credentials) => {
+  async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post("/users/signup", credentials);
       token.set(data.token);
       return data;
     } catch (error) {
+      return rejectWithValue(error);
       // TODO: Добавить обработку ошибки error.message
     }
   }
@@ -36,15 +36,19 @@ export const register = createAsyncThunk(
  * body: { email, password }
  * После успешного логина добавляем токен в HTTP-заголовок
  */
-const logIn = createAsyncThunk("auth/login", async (credentials) => {
-  try {
-    const { data } = await axios.post("/users/login", credentials);
-    token.set(data.token);
-    return data;
-  } catch (error) {
-    // TODO: Добавить обработку ошибки error.message
+const logIn = createAsyncThunk(
+  "auth/login",
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/users/login", credentials);
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+      // TODO: Добавить обработку ошибки error.message
+    }
   }
-});
+);
 
 /*
  * POST @ /users/logout
