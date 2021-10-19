@@ -14,8 +14,7 @@ export default function AppBarComponent() {
           <Navigation />
         </Typography>
         <Typography variant="h6">
-          {" "}
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}{" "}
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Typography>
       </Toolbar>
     </AppBar>
