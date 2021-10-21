@@ -76,7 +76,7 @@ const fetchCurrentUser = createAsyncThunk(
   "auth/refresh",
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    const token = state.auth.token;
+    // const token = state.auth.token;
     // console.log(token);
     const persistedToken = state.auth.token;
 
